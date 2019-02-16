@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        var data = {
+            name : 'ilhoon',
+            age : 32,
+        };
+        xhr.onreadystatechange = function(){ // 요청에 대한 콜백
+            if(xhr.readyState === xhr.DONE){  //  요청완료
+                if(xhr.status === 200 || xhr.status === 201){   //  응답코드 200혹은 201이면 성공
+                    console.log(xhr.responseText);
+                }else{
+                    console.error(xhr.responseText);
+                }
+            }
+        };
+        xhr.open('GET','http://www.zerocho.com/api/get');// 메서드와 주소 설정
+        xhr.setRequestHeader('Content-Type','application/json');//  컨텐츠 타입을 json으로
+        xhr.send(JSON.stringify(data));//  데이터를 동봉해서 전송
+    </script>
+</body>
+</html>
