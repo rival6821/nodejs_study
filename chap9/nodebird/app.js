@@ -17,7 +17,7 @@ app.set('port', process.env.PORT || 8001);
 
 // 개발용 콘솔찍기
 app.use(morgan('dev'));
-app.use(express.static(paht.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 // urlencode
 app.use(express.urlencoded({ extended : false }));
