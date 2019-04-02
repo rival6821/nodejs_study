@@ -1,12 +1,13 @@
-module.exports = (sequelize, DataTypes)=>{
+module.exports = (sequelize, DataTypes) => (
     sequelize.define('hashtag', {
-        title : {
-            type : DataTypes.STRING(15),
-            allowNull : false,
-            unique : ture,
-        },
-    },{
-        timestamps : true,
-        paranoid:true,
-    });
-};
+      title: {
+        type: DataTypes.STRING(15),
+        allowNull: false,
+        unique: true,
+      },
+    }, {
+      timestamps: true,
+      paranoid: true,
+    })
+  );
+  
