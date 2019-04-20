@@ -5,8 +5,8 @@ const { User, Domain } = require('../models');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  User.findOne({
-    where: { id : req.user && req.user.id },
+  User.find({
+    where: { id: req.user && req.user.id },
     include: { model: Domain },
   })
     .then((user) => {
